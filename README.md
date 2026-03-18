@@ -87,3 +87,6 @@ dotnet run
 🤝 Contributing
 
 Contributions are welcome!
+
+
+<img width="550" height="215" alt="rediscachearchitecture" src="https://github.com/user-attachments/assets/019c9182-e6b8-4ebd-8a35-66efa5c8ad93" />
