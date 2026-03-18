@@ -1,57 +1,62 @@
 🚀 ASP.NET Web App with Azure Cache & Azure SQL
 
-This project demonstrates a high-performance web application built using .NET that leverages in-memory caching with Azure Cache to reduce database load and improve response times.
+A high-performance web application built with ASP.NET Core that utilizes Azure Cache for Redis and Azure SQL Database to optimize data access, reduce latency, and improve scalability.
 
-📌 Architecture Overview
+📌 Overview
 
-The application follows a cache-aside pattern:
+This project demonstrates how to implement a cache-aside pattern in a modern .NET application. By integrating in-memory caching, the application minimizes database load and significantly improves response times.
 
-User sends request to the web application
+🧠 Key Concepts
 
-Application checks if data exists in cache
+🔹 Cache-aside pattern for efficient data retrieval
 
-If cache hit → return data immediately
+🔹 In-memory key/value storage using Redis
 
-If cache miss → fetch from database
+🔹 Reduced database round-trips
 
-Store data in cache
+🔹 Improved application performance and scalability
 
-Return response to user
+🏗️ Architecture
 
-🧠 Key Concept
+The application workflow:
 
-Cache stores key/value pairs in memory
-
-Reduces repeated database calls
-
-Improves performance and scalability
-
-🏗️ Tech Stack
-
-Backend: ASP.NET Core
-
-Caching: Azure Cache for Redis
-
-Database: Azure SQL Database
-
-Language: C#
-
-⚙️ How It Works
 Client → Web App → Cache Check
                      ↓
                 Cache Hit → Return Data
                      ↓
                 Cache Miss → Fetch from DB → Store in Cache → Return Data
+🔄 Request Flow
+
+Client sends a request to the application
+
+Application checks Redis cache
+
+If cache hit → data is returned instantly
+
+If cache miss:
+
+Fetch data from Azure SQL Database
+
+Store data in Redis cache
+
+Return response to client
+
+🛠️ Tech Stack
+Layer	Technology
+Backend	ASP.NET Core
+Language	C#
+Caching	Azure Cache for Redis
+Database	Azure SQL Database
 📂 Project Structure
 /src
-  ├── Controllers/
-  ├── Views/
-  ├── Models/
+  ├── Controllers/   # Handles HTTP requests
+  ├── Models/        # Data models
+  ├── Views/         # UI components
   ├── appsettings.json
-  └── Program.cs
-🔧 Configuration
+  └── Program.cs     # Entry point
+⚙️ Configuration
 
-Update your appsettings.json:
+Update your appsettings.json with your Azure credentials:
 
 {
   "ConnectionStrings": {
@@ -60,17 +65,25 @@ Update your appsettings.json:
   }
 }
 ▶️ Getting Started
-1. Clone the repo
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
-2. Restore dependencies
+1️⃣ Clone the Repository
+git clone https://github.com/shivIndewar/RedisCach.git
+cd RedisCach
+2️⃣ Restore Dependencies
 dotnet restore
-3. Run the application
+3️⃣ Run the Application
 dotnet run
 🧪 Example Flow
 
-<img width="550" height="215" alt="rediscachearchitecture" src="https://github.com/user-attachments/assets/00d8490e-c291-4958-bfee-081afd7c56e3" />
+🚀 Features
+
+⚡ Fast data retrieval using Redis caching
+
+📉 Reduced database load
+
+🔄 Scalable and production-ready architecture
+
+🧩 Clean and maintainable project structure
 
 🤝 Contributing
 
-Feel free to fork this repository and submit pull requests.
+Contributions are welcome!
